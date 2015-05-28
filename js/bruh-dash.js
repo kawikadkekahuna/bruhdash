@@ -1,9 +1,14 @@
 var global = window || GLOBAL;
 
-global.bruhdash = {
-  chunk: function(){
 
-  },
+global.bruhdash = {
+  chunk: function(array,size){
+  
+  var newArray = array.slice(1.3);
+  return newArray;
+
+},
+
 
   compact: function() {
 
@@ -25,8 +30,8 @@ global.bruhdash = {
 
   },
 
-  first: function () {
-      
+  first: function (array) {
+      return array[0];
   },
 
   indexOf: function () {
