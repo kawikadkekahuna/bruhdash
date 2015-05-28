@@ -108,7 +108,9 @@ global.bruhdash = {
 
   },
 
-  last: function () {
+  last: function (array) {
+
+    return array[array.length - 1];
 
   },
 
