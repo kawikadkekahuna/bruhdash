@@ -3,14 +3,32 @@ var global = window || GLOBAL;
 
 global.bruhdash = {
   chunk: function(array,size){
-  
-  var newArray = array.slice(1.3);
-  return newArray;
+   var newArray = [];
 
+   for(var i =0; i < array.length; i+= size){
+    
+    newArray.push(array.slice(i,i+size));
+
+   }
+   return newArray;
 },
 
 
-  compact: function() {
+  compact: function(array) {
+  var newArray = []; 
+  var falseyArray = [undefined,null,0,"",NaN,false];
+  
+  for(var i = 0; i<= array.length; i++){
+    if(array[i] !== falseyArray[0] && array[i] !== falseyArray[1] && array[i] !== falseyArray[2] && array[i] !== falseyArray[3] && isNaN(array[i]) === false && array[i] !== falseyArray[5]){
+      newArray.push(array[i]);
+    }
+    
+    
+  }
+  return newArray;
+
+  
+  
 
   },
 
@@ -39,6 +57,7 @@ global.bruhdash = {
   },
 
   inital: function () {
+
 
   },
 
@@ -82,7 +101,17 @@ global.bruhdash = {
 
   },
 
-  without: function() {
+  without: function(array, exclude) {
+
+    var newArray = [];
+
+    if(SameValueZero(exclude[0],array[0])){
+      console.log('true');
+    }
+
+    return newArray;
+
+
 
   }
 };
