@@ -114,7 +114,30 @@ global.bruhdash = {
 
   },
 
-  lastIndexof: function () {
+  lastIndexOf: function (array, value, index) {
+    var newVal = 0;
+    var counter = 0;
+    if(index === undefined){
+
+        index = 1;
+      }
+
+    while (counter != array.length){
+
+      if(array[counter] === value){
+
+        newVal = counter;
+
+      }
+      counter++;
+    }
+
+    if(newVal != undefined){
+      return counter - newVal;
+    }else{
+      return -1;
+    }
+    
 
   },
 
