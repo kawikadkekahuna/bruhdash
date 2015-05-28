@@ -56,7 +56,12 @@ global.bruhdash = {
       dropCount = 1;
     }
 
-    for(var i = 0; i< dropCount; i++){
+\
+
+
+
+\
+\    for(var i = 0; i< dropCount; i++){
     array.pop();
   
     }
@@ -87,12 +92,7 @@ global.bruhdash = {
       index = 0;
     }
 
-    if(index != value){
-    return array.indexOf(value);
-    }else {
-
-      return array.index(value + index);
-    }
+  
   },
 
 
