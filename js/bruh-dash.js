@@ -34,9 +34,17 @@ global.bruhdash = {
 
   difference: function() {
 
+
+
+
   },
 
-  drop: function(){
+  drop: function(array, dropCount){
+
+
+    return array.slice(dropCount,array.length);
+
+
 
   },
 
