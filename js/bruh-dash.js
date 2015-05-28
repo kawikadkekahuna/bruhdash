@@ -55,13 +55,7 @@ global.bruhdash = {
  if(dropCount === undefined){
       dropCount = 1;
     }
-
-\
-
-
-
-\
-\    for(var i = 0; i< dropCount; i++){
+   for(var i = 0; i< dropCount; i++){
     array.pop();
   
     }
@@ -88,11 +82,23 @@ global.bruhdash = {
 
   indexOf: function (array, value, index) {
 
-    if(index === undefined){
-      index = 0;
-    }
+      if(index === undefined){
 
-  
+        index = 1;
+      }
+
+      for(var i = index; i < array.length; i++){
+
+       if(array[i] === value){
+        return i;
+        break;
+      }
+       
+     }
+
+     return -1;
+    
+
   },
 
 
