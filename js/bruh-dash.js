@@ -102,8 +102,9 @@ global.bruhdash = {
   },
 
 
-  inital: function () {
+  inital: function (array) {
 
+    return array.slice(0,(array.length));
 
   },
 
