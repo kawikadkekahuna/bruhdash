@@ -41,18 +41,39 @@ global.bruhdash = {
 
   drop: function(array, dropCount){
 
-
+    if(dropCount === undefined){
+      dropCount = 1;
+    }
     return array.slice(dropCount,array.length);
 
 
 
   },
 
-  dropRight: function() {
+  dropRight: function(array,dropCount) {
 
+ if(dropCount === undefined){
+      dropCount = 1;
+    }
+
+    for(var i = 0; i< dropCount; i++){
+    array.pop();
+  
+    }
+    return array; 
   },
 
-  fill: function() {
+  fill: function(array,value,start,end) {
+    
+    if(start === undefined && end === undefined){  
+    var start = 0;
+    var end = array.length;
+
+  }
+    array.fill(value,start,end);
+
+    return array;
+
 
   },
 
@@ -60,9 +81,20 @@ global.bruhdash = {
       return array[0];
   },
 
-  indexOf: function () {
+  indexOf: function (array, value, index) {
 
+    if(index === undefined){
+      index = 0;
+    }
+
+    if(index != value){
+    return array.indexOf(value);
+    }else {
+
+      return array.index(value + index);
+    }
   },
+
 
   inital: function () {
 
