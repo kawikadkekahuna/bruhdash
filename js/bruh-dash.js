@@ -165,43 +165,139 @@ global.bruhdash = {
 
   },
 
-  pullAt: function () {
-
-  },
-
-  rest: function () {
-
-  },
-
-  slice: function () {
-
-  },
-
-  take: function () {
-
-  },
-
-  takeRight: function () {
-
-  },
-
-  zip: function () {
-
-  },
-
-  unzip: function () {
-
-  },
-
-  without: function(array, exclude) {
+  pullAt: function (array) {
 
     var newArray = [];
 
-    if(SameValueZero(exclude[0],array[0])){
-      console.log('true');
+    for(var i =0; i< arguments.length - 1 ; i++){
+
+      newArray.push(
+        
+        array.splice(arguments[i],1)[0]
+        
+        );
+
+
+    }
+
+    
+
+    return newArray;
+
+
+  },
+
+  rest: function (array) {
+
+    var newArray = [];
+
+    
+
+    return array.slice(1,array.length);
+
+
+
+  },
+
+  slice: function (array, start, end) {
+
+    return array.slice(start,end);
+
+  },
+
+  take: function (array, number) {
+
+    if(number === undefined){
+
+      number = 1;
+
+    }
+
+    return array.slice(0,number);
+
+
+  },
+
+  takeRight: function (array,number) {
+
+    
+    if(number === undefined){
+      number = 1;
+
+    }else if(number === 0){
+
+      return [];
+    }
+
+    return array.slice(-number);
+    
+
+
+
+
+
+
+
+  
+      
+  },
+
+  zip: function (array) {
+
+    var newArray = [];
+
+    for(var i = 0; i< array.length; i++){
+      var tempArray =[];
+      for(var k = 0; k < arguments.length; k++){
+
+        if(arguments[k][i] === undefined){
+          arguments[k][i] = null;
+        }
+        tempArray.push(arguments[k][i]);
+
+      }
+
+      newArray.push(tempArray);
+
     }
 
     return newArray;
+
+
+
+
+
+  },
+
+  unzip: function (array) {
+
+     var newArray = [];
+
+    for(var i = 0; i< array.length; i++){
+      var tempArray =[];
+      for(var k = 0; k < arguments.length; k++){
+
+        if(arguments[k][i] === undefined){
+          arguments[k][i] = null;
+        }
+        tempArray.push(arguments[k][i]);
+
+      }
+
+      newArray.push(tempArray);
+
+    }
+
+    return newArray;
+  },
+
+  without: function(array) {
+
+
+ if(dropCount === undefined){
+      dropCount = 1;
+    }
+    return array.slice(arguments.length,array.length);
 
 
 
