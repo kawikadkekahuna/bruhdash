@@ -91,7 +91,6 @@ global.bruhdash = {
 
        if(array[i] === value){
         return i;
-        break;
       }
        
      }
@@ -132,7 +131,7 @@ global.bruhdash = {
       counter++;
     }
 
-    if(newVal != undefined){
+    if(newVal !== undefined){
       return counter - newVal;
     }else{
       return -1;
@@ -141,7 +140,28 @@ global.bruhdash = {
 
   },
 
-  pull: function () {
+  pull: function (array) {
+  var newArray = [];
+
+  for(var i =0; i< array.length; i++){
+    
+    var doPush = true;
+
+    for(var k =1; k< arguments.length; k++){
+      if(arguments[k] === array[i]){
+        doPush = false;
+      }
+
+    }
+
+    if(doPush === true){
+      newArray.push(array[i]);
+    }
+
+  }   
+
+  return newArray;
+
 
   },
 
